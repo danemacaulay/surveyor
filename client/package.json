@@ -1,0 +1,43 @@
+{
+  "name": "bookspring-readathon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "npm run copy && ./node_modules/.bin/webpack-dev-server --config webpack.config --progress --colors --inline -d --open",
+    "copy": "mkdir -p dist && npm run copy-vendor && npm run copy-resources",
+    "copy-vendor": "cp -r ./node_modules/bootstrap/dist ./dist/bootstrap",
+    "copy-resources": "cp -r ./app/resources dist",
+    "clean": "rm -rf dist",
+    "build": "./node_modules/.bin/webpack --optimize-minimize && npm run copy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "html-loader": "^0.4.3",
+    "json-loader": "^0.5.4",
+    "ng-annotate-loader": "^0.1.0",
+    "ng-annotate-webpack-plugin": "^0.1.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-touch": "^1.5.0",
+    "angular-translate": "^2.9.2",
+    "angular-ui-bootstrap": "^1.1.2",
+    "angularfire": "^1.1.4",
+    "bootstrap": "^3.3.6",
+    "d3": "^3.5.16",
+    "d3-tip": "^0.6.7",
+    "firebase": "^2.4.1",
+    "lodash": "^4.0.0",
+    "moment": "^2.11.2",
+    "topojson": "^1.6.24"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "app-name": "Surveyor",
+    "language": "Language",
+    "login": "Login",
+    "login-failed": "Login failed",
+    "email-address": "Email address",
+    "email-invalid": "Invalid email",
+    "password": "Password",
+    "logout": "Logout"
+}

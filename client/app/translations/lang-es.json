@@ -1,0 +1,10 @@
+{
+    "app-name": "Surveyor",
+    "language": "Idioma",
+    "login": "Iniciar sesión",
+    "login-failed": "Login failed",
+    "email-address": "Dirección de correo electrónico",
+    "email-invalid": "Email inválido",
+    "password": "Contraseña",
+    "logout": "Cerrar sesión"
+}

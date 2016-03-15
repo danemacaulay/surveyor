@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app="surveyor-client" ng-strict-di ng-controller="appController">
+
+    <nav></nav>
+
+    <div class="container">
+        <survey-entry ng-show="user"></survey-entry>
+        <survey-question ng-hide="user"></survey-question>
+    </div>
+
+    <script type="text/javascript" src="dist/vendor.js" charset="utf-8"></script>
+    <script type="text/javascript" src="dist/bundle.js" charset="utf-8"></script>
+</body>
+</html>
