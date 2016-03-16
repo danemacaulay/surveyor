@@ -19,6 +19,13 @@ module.exports = {
             { test: /\.json$/, loader: 'json' }
         ]
     },
+    devServer: {
+        proxy: {
+            '/*': {
+                target: 'http://localhost:3000',
+            }
+        }
+    },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin('vendor', './dist/vendor.js')
     ]

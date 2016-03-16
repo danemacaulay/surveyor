@@ -5,8 +5,9 @@ var adminUserPassword = process.env.SURVEYOR_ADMIN_USER_PASSWORD;
 var crypto = require('../server/crypto');
 var Promise = require('promise');
 
-var User = require('../server/models/user');
-var SurveyQuestion = require('../server/models/question');
+var path = require('path');
+var User = require(path.resolve('./server/models/user'));
+var Survey = require(path.resolve('./server/models/survey'));
 
 function initializeDB(adminUserPassword) {
 
@@ -19,7 +20,7 @@ function initializeDB(adminUserPassword) {
         });
     });
 
-    var p2 = SurveyQuestion.sync({force: true});
+    var p2 = Survey.sync({force: true});
 
     Promise.all([p1, p2]).finally(function () {
         process.exit();

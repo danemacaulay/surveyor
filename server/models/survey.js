@@ -3,7 +3,7 @@
 var Sequelize = require('sequelize');
 var sequelize = require('../sequelize');
 
-module.exports = sequelize.define('survey_question', {
+module.exports = sequelize.define('survey', {
     title: {
         type: Sequelize.STRING,
     },

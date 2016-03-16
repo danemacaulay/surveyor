@@ -3,9 +3,11 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 app.use(express.static('./client'));
 
+app.use('/services', cookieParser());
 app.use('/services', bodyParser.json());
 
 app.post('/services/authentication', require('./resources/authentication'));

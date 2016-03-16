@@ -6,7 +6,7 @@ var sequelize = require('../sequelize');
 module.exports = sequelize.define('user', {
     username: {
         type: Sequelize.STRING,
-        // @TODO: add constraint on this!
+        // @TODO: add constraints
     },
     password: {
         type: Sequelize.STRING
