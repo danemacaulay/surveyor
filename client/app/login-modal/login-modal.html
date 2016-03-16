@@ -14,7 +14,7 @@
             </div>
             <div class="form-group" ng-class="{ 'has-error': loginForm.password.$dirty && loginForm.password.$error.required || loginForm.password.$dirty && !loginForm.password.$valid }">
                 <label for="password" translate="password"></label>
-                <input required type="text" class="form-control" name="password" id="password" ng-model="user.password">
+                <input required type="password" class="form-control" name="password" id="password" ng-model="user.password">
                 <span ng-show="loginForm.password.$dirty && loginForm.password.$error.required" class="help-block" translate="password-required"></span>
                 <span ng-show="loginForm.password.$dirty && !loginForm.password.$valid" class="help-block" translate="password-invalid"></span>
             </div>

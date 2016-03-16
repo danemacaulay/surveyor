@@ -5,9 +5,8 @@
   "main": "app/app.js",
   "scripts": {
     "start": "npm run copy && ./node_modules/.bin/webpack-dev-server --config webpack.config --progress --colors --inline -d --open",
-    "copy": "mkdir -p dist && npm run copy-vendor && npm run copy-resources",
+    "copy": "mkdir -p dist && npm run copy-vendor",
     "copy-vendor": "cp -r ./node_modules/bootstrap/dist ./dist/bootstrap",
-    "copy-resources": "cp -r ./app/resources dist",
     "clean": "rm -rf dist",
     "build": "./node_modules/.bin/webpack --optimize-minimize && npm run copy",
     "test": "echo \"Error: no test specified\" && exit 1"

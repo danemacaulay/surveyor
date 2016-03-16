@@ -1,2 +1,19 @@
-require('./init-db');
-require('./init-server');
+'use strict';
+
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+
+app.use(express.static('./client'));
+
+app.use('/services', bodyParser.json());
+
+app.post('/services/authentication', require('./resources/authentication'));
+
+app.get('/services/survey', require('./resources/survey/get.js'));
+app.post('/services/survey', require('./resources/survey/post.js'));
+
+var server = app.listen(3000, function () {
+    var port = server.address().port;
+    console.log('Surveyor app listening at http://localhost:%s', port);
+});

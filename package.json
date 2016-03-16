@@ -4,15 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "source dev.env && npm run dev-client-build && node server",
+    "dev-client-build": "cd client && npm run build",
+    "dev-database-start": "source dev.env && ./scripts/dev-db-startup.sh",
+    "dev-database-init": "source dev.env && node scripts/dev-db-init",
+    "dev-database-connect": "source dev.env && ./scripts/dev-db-connect.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^0.8.5",
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "lodash": "^3.10.1",
     "mysql": "^2.9.0",
+    "promise": "^7.1.1",
+    "promisify-node": "^0.4.0",
     "sequelize": "^3.12.2"
   }
 }

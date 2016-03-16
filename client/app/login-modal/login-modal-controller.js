@@ -3,16 +3,21 @@
 /* @ngInject */
 function LoginModalController($rootScope, $scope, $window, $uibModalInstance, $http) {
 
-    function handleLogin(error, authData) {
-        if (error) {
-            $scope.form.msgTranslateId = 'login-failed';
-            return;
-        }
+    $scope.form = {
+        msgTranslateId: ''
+    };
+
+    function handleFailure() {
+        $scope.form.msgTranslateId = 'login-failed';
+    }
+
+    function handleLogin(authData) {
         $uibModalInstance.close(authData);
     }
 
     $scope.login = function() {
-        $http.post('/services/authentication').then(handleLogin);
+        var data = {username: $scope.user.email, password: $scope.user.password};
+        $http.post('/services/authentication', data).then(handleLogin).catch(handleFailure);
     };
 
 }
