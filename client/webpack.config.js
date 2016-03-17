@@ -21,7 +21,7 @@ module.exports = {
     },
     devServer: {
         proxy: {
-            '/*': {
+            '/services/*': {
                 target: 'http://localhost:3000',
             }
         }

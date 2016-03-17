@@ -1,0 +1,30 @@
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading" translate="enter-survey"></div>
+        <div class="panel-body">
+
+          <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" dismiss-on-timeout="3000" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+
+          <table class="table">
+            <caption>Optional table caption.</caption>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+    </div>
+</div>

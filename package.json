@@ -9,8 +9,9 @@
     "dev-database-start": "source dev.env && ./scripts/dev-db-startup.sh",
     "dev-database-init": "source dev.env && node scripts/dev-db-init",
     "dev-database-connect": "source dev.env && ./scripts/dev-db-connect.sh",
-    "dev-generate-certs": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout certs/private.pem -out certs/cert.pem",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev-generate-certs": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout certs/private.pem -out certs/public.pem",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postintall": "cd client && npm install"
   },
   "author": "",
   "license": "ISC",

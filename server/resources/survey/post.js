@@ -14,13 +14,15 @@ module.exports =  function (req, res) {
 
     var title = req.body.title;
     var body = req.body.body;
+    var options = req.body.options;
 
     crypto.verify(token).then(function (data) {
         console.log('data', data);
     }).then(function () {
         return Survey.create({
             title: title,
-            body: body
+            body: body,
+            options: options
         });
     }).then(function (results) {
         console.log(results);

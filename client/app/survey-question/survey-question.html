@@ -1,0 +1,26 @@
+<div class="col-md-6">
+    <div class="panel panel-primary">
+        <div class="panel-heading" translate="enter-survey"></div>
+        <div class="panel-body">
+            <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" dismiss-on-timeout="3000" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+            <h2>
+              {{survey.title}}
+            </h2>
+            <p>
+              {{survey.body}}
+            </p>
+
+            <form ng-submit="submitSurvey()">
+
+              <div class="btn-group" ng-repeat="(key, value) in survey.options">
+                  <label class="btn btn-default">
+                      <input type="radio" name="responses" ng-click="survey.response = value"/> {{value}}
+                  </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-minutes-read"><span translate="submit-survey"></span></button>
+
+            </form>
+        </div>
+    </div>
+</div>

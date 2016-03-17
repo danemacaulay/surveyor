@@ -7,6 +7,8 @@ module.exports = require('angular').module('surveyor-client', [
     require('./nav').name,
     require('./login-modal').name,
     require('./survey-entry').name,
+    require('./survey-question').name,
+    require('./survey-results').name,
     require('./translations').name,
 ])
 .config(require('./app-config'))

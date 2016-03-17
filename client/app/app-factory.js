@@ -1,7 +1,7 @@
 'use strict';
 
 /* @ngInject */
-function AppFactory($window) {
+function AppFactory($window, $rootScope) {
 
     function getUser() {
         var user;
@@ -13,6 +13,7 @@ function AppFactory($window) {
     }
 
     function setUser(user) {
+        $rootScope.$broadcast('login', user);
         $window.sessionStorage.setItem('bsr-auth', JSON.stringify(user));
     }
 

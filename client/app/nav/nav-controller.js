@@ -1,7 +1,8 @@
 'use strict';
 
 /* @ngInject */
-function NavController($scope, $translate, $window, $uibModal, appFactory) {
+function NavController($scope, $rootScope, $translate, $window, $uibModal, appFactory) {
+
     $scope.changeLanguage = function (key) {
         $translate.use(key);
     };
@@ -22,6 +23,7 @@ function NavController($scope, $translate, $window, $uibModal, appFactory) {
         $window.sessionStorage.clear();
         $window.location.reload();
     };
+
 }
 
 module.exports = NavController;

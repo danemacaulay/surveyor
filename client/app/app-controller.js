@@ -3,6 +3,10 @@
 /* @ngInject */
 function AppController($timeout, $scope, $rootScope, $uibModal, $window, appFactory) {
 
+    function init(evt, authedUser) {
+        $scope.user = authedUser;
+    }
+
     $scope.user = appFactory.getUser();
 
     if ($scope.user) {
@@ -11,6 +15,8 @@ function AppController($timeout, $scope, $rootScope, $uibModal, $window, appFact
             $rootScope.$broadcast('login', $scope.user);
         });
     }
+
+    $rootScope.$on('login', init);
 
 }
 

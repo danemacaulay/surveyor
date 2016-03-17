@@ -10,8 +10,9 @@
     <nav></nav>
 
     <div class="container">
-        <survey-entry ng-show="user"></survey-entry>
         <survey-question ng-hide="user"></survey-question>
+        <survey-entry ng-show="user"></survey-entry>
+        <survey-results ng-show="user"></survey-results>
     </div>
 
     <script type="text/javascript" src="dist/vendor.js" charset="utf-8"></script>

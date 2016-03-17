@@ -14,15 +14,17 @@
 
               <div class="form-group" ng-class="{ 'has-error': loginForm.surveyBody.$dirty && loginForm.surveyBody.$error.required || loginForm.surveyBody.$dirty && !loginForm.surveyBody.$valid }">
                   <label for="surveyBody" translate="survey-body"></label>
-                  <input required type="surveyBody" class="form-control" name="surveyBody" id="surveyBody" ng-model="entry.body">
+                  <input required type="text" class="form-control" name="surveyBody" id="surveyBody" ng-model="entry.body">
                   <span ng-show="loginForm.surveyBody.$dirty && loginForm.surveyBody.$error.required" class="help-block" translate="survey-body-required"></span>
                   <span ng-show="loginForm.surveyBody.$dirty && !loginForm.surveyBody.$valid" class="help-block" translate="survey-body-invalid"></span>
               </div>
 
-              <div class="btn-group" uib-dropdown>
-                <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-to-body">
-                  <li ng-repeat="value in minutesArray" role="menuitem"><a ng-click="setTime(value)">{{ value }} <span translate="minutes-set"></span></a></li>
-                </ul>
+              <div class="form-group" ng-class="{ 'has-error': loginForm.surveyOptions.$dirty && loginForm.surveyOptions.$error.required || loginForm.surveyOptions.$dirty && !loginForm.surveyOptions.$valid }">
+                  <label for="surveyOptions" translate="survey-options"></label>
+                  <small translate="new-line-per-option"></small>
+                  <textarea required class="form-control" name="surveyOptions" id="surveyOptions" ng-model="entry.options"></textarea>
+                  <span ng-show="loginForm.surveyOptions.$dirty && loginForm.surveyOptions.$error.required" class="help-block" translate="survey-options-required"></span>
+                  <span ng-show="loginForm.surveyOptions.$dirty && !loginForm.surveyOptions.$valid" class="help-block" translate="survey-options-invalid"></span>
               </div>
 
               <button type="submit" class="btn btn-primary submit-minutes-read"><span translate="submit-survey"></span></button>
